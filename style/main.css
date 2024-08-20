@@ -542,7 +542,13 @@ footer .container {
   .footer-box {
     flex-direction: column;
     align-items: flex-start;
+    padding: 60px 16px;
+    gap: 0px
+    }
+  .fut-social {
+    margin-bottom: 40px;
   }
+
 }
 .head-menu__buttons {
   display: flex;
