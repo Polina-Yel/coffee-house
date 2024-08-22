@@ -17,19 +17,46 @@ header a {
 .logo img {
 }
 .navbar {
+  text-decoration: none;
 }
+
 .navbar-list {
   display: flex;
   gap: 30px;
 }
 .navbar-list__item {
+  /* position: relative; */
 }
+
 .navbar-list__item a {
 }
 .button_menu {
   display: flex;
   gap: 8px;
   align-items: center;
+}
+.underline {
+  position: relative;
+}
+.underline::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--text-dark);
+  transform: scale(0);
+  transition: all 0.2s;
+}
+.underline:hover:after {
+  transform: scale(1);
+}
+.footer-contact-item.underline::after{
+  bottom: -3px;
+  height: 2px;
+  background-color: var(--text-light);
 }
 .menubar a {
 }
@@ -59,7 +86,6 @@ video {
   width: 44%;
   top: 16%;
   left: 7%;
-  /* display: flex; */
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
@@ -68,8 +94,6 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  /* font-family: "Inter-Reg"; */
-  /* position: absolute; */
 }
 .banner {
   display: block;
@@ -94,6 +118,29 @@ p {
   box-sizing: border-box;
   align-items: flex-end;
   margin: 40px 0px;
+  position: relative;
+}
+.banner_button img{
+  opacity: 0;
+  transition: 0.2s;
+}
+.banner_button:hover img{
+  opacity: 1;
+}
+.banner_button span{
+  position: relative;
+transition: 0.2s;
+}
+.banner_button:hover span{
+   transform: translate(-5px);
+}
+
+
+
+@media (max-width: 1222px) {
+  .banner_text {
+    width: fit-content;
+  }
 }
 @media (max-width: 1000px) {
   .banner_text {
@@ -121,7 +168,6 @@ p {
 }
 
 /* ------------------------------- slider --------------------------- */
-
 .favorite {
   justify-content: space-between;
 }
@@ -213,7 +259,19 @@ p {
   justify-content: center;
   display: flex;
   align-items: center;
+  transition: 0.2s;
+  cursor: pointer;
 }
+.poli:hover {
+  background-color: var(--text-dark);
+}
+.poli path {
+  transition: 0.2s;
+}
+.poli:hover path {
+  stroke: var(--text-light);
+}
+
 .slider .bullets {
   width: 40px;
   height: 4px;
@@ -288,6 +346,9 @@ p {
   display: flex;
   gap: 40px;
 }
+/* .pickblock:hover{----------------------------------------------------------------------------------------------------------------------------
+  
+} */
 .picblock-left {
   display: flex;
   flex-direction: column;
@@ -342,18 +403,21 @@ p {
 }
 .app-content__text {
 }
+
+
 .app-button__group {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .app-button {
   width: 200px;
   display: flex;
   align-items: center;
-
   gap: 8px;
   color: var(--text-dark);
   gap: 12px;
@@ -362,9 +426,16 @@ p {
   border: 1px solid var(--border-dark);
   border-radius: 100px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
-.app-button__svg {
+.app-button:hover {
+  background-color: var(--text-dark);
+}
+.app-button path{
+  transition: 0.2s;
+}
+.app-button:hover .app-button__svg path {
+  color: var(--text-light);
 }
 .app-button__text {
   display: flex;
@@ -373,6 +444,17 @@ p {
   font-family: "Inter-bold";
   font-weight: 600;
   text-wrap: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.app-button_text:hover {
+  background-color: var(--text-dark);
+}
+.app-button_text {
+  transition: 0.2s;
+}
+.app-button_text:hover {
+  color: var(--text-light);
 }
 
 .app-button__subname {
@@ -491,8 +573,22 @@ footer .container {
   border-radius: 50%;
   border: 1px solid var(--border-light);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
+
+.footer-social__border:hover {
+  background-color: var(--text-light);
+}
+.footer-social__border path {
+  transition: 0.2s;
+}
+.footer-social__border:hover path {
+  stroke: var(--text-dark);
+}
+
+
+
+
 .fut-right {
   display: flex;
   justify-content: right;
@@ -532,7 +628,7 @@ footer .container {
     flex-direction: column;
     align-items: flex-start;
   }
-  .footer-box h2{
+  .footer-box h2 {
     flex-wrap: wrap;
     overflow: hidden;
     justify-content: space-between;
@@ -543,12 +639,11 @@ footer .container {
     flex-direction: column;
     align-items: flex-start;
     padding: 60px 16px;
-    gap: 0px
-    }
+    gap: 0px;
+  }
   .fut-social {
     margin-bottom: 40px;
   }
-
 }
 .head-menu__buttons {
   display: flex;
